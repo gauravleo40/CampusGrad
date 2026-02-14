@@ -99,4 +99,45 @@
   - Counting the number of +ive values in a List without using conditional statements
   - Fetching a particular list item with Indexing operation and performing comparison operations on it
   - Does a List have a certain item ?
+
+ ---
+
  
+
+## Session 04
+
+#### Naming convention for Variables - Dos and Don'ts
+ - Can start with lower or UPPER case letters
+ - Can start with an underscore `_`
+ - Cannot start with numbers or other special characters
+ - Variable names that differ only in letter case are treated as different variables, which means Python is case-sensitive
+   - e.g., in `year = 2025` and `Year = 2026` , the variables `year` and `Year` are considered two separate variables
+
+#### Role of Indentation in For Loops
+* Observed what happens when indentation is present and what changes when it is removed
+* Explained that indentation defines the block of code inside the `for` loop, meaning all indented statements are executed as part of the loop
+
+#### Use of `dir()` and `help()` functions on `Lists`
+ - `dir(list)` to explore the different methods available for `List` as a data structure
+ - `help(list.append)` to check the documentation and usage details for the `append()` method
+ - `help(list)` to check the complete documentation available for `List` as a data structure
+
+#### Explored List Methods with examples
+ - `append()` --> to add new item to a List at the end
+ - `count()`  --> to count the number of occurrences of an item in a List 
+ - `clear()`  --> to remove all List items to make it empty
+ - `sort()`   --> to sort List items in ascending or descending order
+
+#### Slicing on Lists (brief introduction)
+ - Use of Slicing operation to fetch multiple items from a List based on their Index positions
+ - Used slicing with various `start`, `stop`, and `step` values to perform meaningful data extraction on a yearly sales example
+
+#### Exercises covered
+- Creating a List with 5 random Integers with `random.randint()` function and `append()` method
+- Simulating a Coin Toss and storing the outcomes ('Head','Tail') in a list with `random.choice()` function and `append()` method
+- Fetching the First 3 items from a List
+- Fetching the last 3 items from a List
+
+
+---
+

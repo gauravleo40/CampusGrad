@@ -161,3 +161,33 @@
    - Get sales for a month using month name
 
 ---
+
+
+## Session 06
+
+#### Other List Methods covered
+ - `remove()` --> to remove a list element based on its value
+ - `pop()`    --> to remove a list element based on its index
+ - `insert()` --> to add a new item to the List at the desired index position
+ - `extend()` --> to extend a list by appending items from another list
+
+#### Conditional Statements (brief introduciton)
+ - `if` and `else`
+ - Exercise : Identifying Lists values (numeric) as Odd or Even
+
+#### Index based assignment to Lists
+ - overwriting the 'NA' value in a List with a value of choice
+
+#### While loops (brief introduction)
+ - Explained how a `while` loop differs from a `for` loop (a `for` loop runs over a sequence, while a `while` loop runs based on a condition)
+ - Executes repeatedly as long as the given condition remains `True`, and stops when the condition becomes `False`
+
+#### Exercises covered
+ - Cleaning a single unwanted value (e.g., `NA`) from a list
+ - Cleaning multiple unwanted values (e.g., `NA`) from a list
+ - Using the `remove()` method inside a `while` loop to repeatedly eliminate specific values
+ - Removing the last item from inner lists within a nested list using the `pop()` method
+ - Inserting a new item into inner lists at a specific index position using the `insert()` method
+ - Converting a nested list into a single flat list using the `extend()` method
+
+---

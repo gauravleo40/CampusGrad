@@ -75,3 +75,28 @@
 - `random.choice(range(1,100))` --> to select a single value randomly from `range(1,100)`
 - `random.sample(range(1,100),5)` --> to create a sample of size 5 from `range(1,100)`
 
+---
+
+## Session 03
+
+#### Introduction to For Loops
+ - Running a For loop on a List
+ - Understanding For loop components
+   - Role of the Alias variable
+   - Colon `:` and Indentation structure
+ - Running a For loop on `range()` function and `string`
+   - Concept of Iterables
+ - Running a For loop a certain number of times using `range()` function
+
+#### Basic operations on a List
+ - Accessing single items with Indexing operation
+ - Comparison operations with `>` and `==` to generate Boolean output 
+ - Membership operation with `in` and `not in` operators
+
+ #### Exercises done in session
+  - Checking if List items are Even or Odd
+  - Checking if List items are +ive (.i.e., > 0)
+  - Counting the number of +ive values in a List without using conditional statements
+  - Fetching a particular list item with Indexing operation and performing comparison operations on it
+  - Does a List have a certain item ?
+ 

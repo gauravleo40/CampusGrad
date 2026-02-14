@@ -141,3 +141,23 @@
 
 ---
 
+## Session 05
+
+#### Slicing in Detail
+- Role of `start`, `end` and `step` components in the way Slicing actually happens
+- Effect of `-ive` and `+ive` step value on the direction of Slicing, i.e., `Left to Right` or `Right to Left`
+- Covered different variations in slicing for an Yearly Sales example
+  - Get Quarter end month sales (.i.e, Mar, Jun, Sep and Dec) 
+  - Get Half Year end month sales (.i.e, Jun and Dec)
+  - Get sales for Even months (.i.e, Feb, Apr, Jun,..)
+  - Get sales for Odd months (.i.e, Jan, Mar, May,..)
+  - Get 12 month sales in reverse order (.i.e, Dec, Nov, Oct,....Feb, Jan)
+  - Get sales for Odd and Even months but reversed (.i.e, Nov, Sep, Jul, ...) and (.i.e., Dec, Oct, Aug, ...)
+  - Creating a Nested List with Quarter sales in inner lists
+
+#### `index()` method in detail
+ - Exercises
+   - Get position of Student in Top 30
+   - Get sales for a month using month name
+
+---

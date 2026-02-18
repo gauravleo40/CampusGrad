@@ -191,3 +191,47 @@
  - Converting a nested list into a single flat list using the `extend()` method
 
 ---
+
+
+
+
+## Session 07
+
+#### Other List Methods covered
+ - `reverse()` --> to reverse a list
+   - or use slicing operation of `[::-1]`
+ - `copy()`    --> to create a shallow copy of a list
+
+
+#### Concept of Shallow and Deep Copy
+ - How a simple assignment, i.e. `b = a`, (where `a` is a simple list) does not create a proper list copy, and any changes to `a` will affect `b`
+ - How `copy()` method and slicing operation of`[::]` create copies of simple lists which do not get affected when original lists are altered. 
+ - That there are limitattions with these methods as they work only for simple lists, but not for Nested Lists
+ - For creating independent copies of Nested Lists copies we need something more which is where Deep copies come (to be explored later)
+
+
+#### Index based assignment to Lists
+ - Overwriting/updating list items by using index based assignment operation
+   - E.g., `movies[2] = 8.9`
+ - **Practical example :** Converting -ive values in a List to positive and overwriting the original list
+
+#### Accessing both Index and Values of List Items
+- **Running a for loop on list length** - `for i in range(len(nums)):` to allow fetching both `Index` and `Values` of items
+  - To access `Index` use `i`
+  - To access `Values` use `nums[i]`
+
+#### Conditional Statements - Use of `if`, `elif`, and `else`
+ - E.g., applying conditional statements to assign Grades (A+, A, B...) to Test scores
+ - Testing the `if/elif/else` logic on multiple values by using `range()` function - e.g., `for score in range(0,101,10):`
+ - Using conditional statement in a single line - examples:
+    ```
+    'Pass' if score >= 50 else 'Fail'
+    ```
+    ```
+    "Water Vapor" if t >=100 else "Water" if t>0 else "Ice"
+    ```
+
+#### Role of `Break` statement in For loops
+- Using the `break` statement to stop a `For loop` early when a criteria is met
+
+---

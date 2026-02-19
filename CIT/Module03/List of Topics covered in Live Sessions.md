@@ -235,3 +235,83 @@
 - Using the `break` statement to stop a `For loop` early when a criteria is met
 
 ---
+
+## Session 08
+
+#### Additional controls in For Loops
+ - `break` statement
+ - `continue` statement
+
+
+
+#### Nested For loops
+ - Running a `For loop` inside another `For loop`
+ - *observe the below program in* [Python Tutor](https://pythontutor.com/visualize.html#mode=edit$0)
+    ```
+    for i in [100,200]:
+        for j in [10,20]:
+            print(i+j)     
+    ```  
+    Output  
+    ```
+    110
+    120
+    210
+    220
+    ```
+
+#### Running a For loop with multiple variables
+ - Uptill now, For loop used as `for i range(10):`
+ - How to run the for loop on multiple variables - lets' say on both `i` and `j` ?
+   - `for i,j in <COLLECTION>:`
+   - This `<COLLECTION>` will be different from a normal `List` or `range()`
+   - Example of such a `<COLLECTION>`: `[[1,2],[3,4],[5,6]]` or `[(0,100),(1,200),(2,300)]`
+   - This kind of structures comes under the `enumerate()` function
+
+
+#### `enumerate()` function
+ - Use : To access both `index` and `value` components of items in a List (or other iterables)
+ - Observed the structure of `enumerate()` function output by using `list(enumerate(nums))` where `nums` is a simple list
+ - Example : *observe the below program in* [Python Tutor](https://pythontutor.com/visualize.html#mode=edit$0)
+    ```
+    nums = ['A','B','C']
+    
+    print(list(enumerate(nums)))
+
+    for i,j in enumerate(nums):
+        print(i,j)
+    ```
+    Output
+
+    ```
+    [(0, 'A'), (1, 'B'), (2, 'C')]
+    0 A
+    1 B
+    2 C
+    ```
+  - The following assignment happens under each iteration:
+    ```
+    i,j = (0,'A')    #---Iteration 01
+    i,j = (1,'B')    #---Iteration 02
+    i,j = (2,'C')    #---Iteration 03
+    ```
+ - **This is the Tuple unpacking** in action to assign values to multiple variables in a single line
+
+#### Tuples as a Data Structure
+
+- **Tuples overview**
+  - Understanding how Tuples are different from Lists
+  - Exploring methods under Tuples - count() and index()
+  - Declaring Tuples with and without round brackets - `()`
+  - Declaring Tuples with a single item - `t = (100,)` or `t = 100,`
+
+- **Tuples as an immutable Data Structure**
+  - Operations **NOT** possible with Tuples
+    - Adding new items
+    - Removing existing items
+    - Updating/ overwriting existing items with Index based assignment operation - i.e., `t[0] = 1`
+  - Declaring multiple variables using **Tuple unpacking**
+    - E.g, `P,I,T = 10000,0.075,5`
+    
+  ---
+

@@ -315,3 +315,46 @@
     
   ---
 
+## Session 09
+
+#### List Comprehension
+ - A more Pythonic and concise way to generate lists using For loops
+   - E.g., `[i**2 for i in range(1,6)]` returns a list `[1,4,9,16,25]`
+ - **Structure of a simple List Comprehension**
+   - `[<expression> <for loop on an iterable>]` 
+ - **Structure of List Comprehension with Conditional Statement**
+   - `[<expression> <for loop on an iterable> <Conditional Statement>]`
+   - E.g.,  `[i**2 for i in range(1,11) if i%2==0]` returns a list `[4,16,36,64,100]`
+ - **Another variation : Note this does not apply any filter on the original list**
+   - `[<Conditional Statement> <for loop on an iterable>]`
+   - E.g., `["Even" if i % 2 == 0 else "Odd" for i in range(1, 6)]` returns a list `['Odd', 'Even', 'Odd', 'Even', 'Odd']`
+
+#### While Loops
+ - Used when the number of loop iterations are not known in advance
+ - A `while` loop requires a condition to run. It runs as long as this condition is `True` 
+    ```
+    while <condition> :
+        ---do this---
+    ```
+ - **Example : Adding numbers entered by a user until they choose to stop**
+   - The loop keeps adding numbers entered by a user until they type "stop", so the number of iterations is unknown beforehand.
+    ```
+    total = 0
+
+    num = input("Enter a number (type 'stop' to finish): ")
+
+    while num != "stop":
+        total += int(num)
+        num = input("Enter a number (type 'stop' to finish): ")
+
+    print("Total =", total)
+    ```
+ - **Other examples :**
+   - A loop keeps rolling a dice (simulation) until a 6 appears
+   - A loop keeps retrying an OTP verification process until the correct OTP is entered or attempts run out.
+ - **Important components of a `while` loop**
+   - **Initialization :** A variable is usually initialized before the loop starts
+   - **A Criteria or a Condition :** that allows the program to enter into the `while` loop and allows it to run untill the condition remains `True`
+   - **Update mechanism :** Inside the loop, something must change so that eventually the condition becomes False. Otherwise, the loop becomes an infinite loop
+
+---

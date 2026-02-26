@@ -358,3 +358,138 @@
    - **Update mechanism :** Inside the loop, something must change so that eventually the condition becomes False. Otherwise, the loop becomes an infinite loop
 
 ---
+
+## Session 10
+
+#### Limitations of Lists & Tuples → Need of Dictionaries
+
+When we are dealing with real-world data like **product names and their prices**, we want to store information in such a way that both pieces of information stay connected in a meaningful way.
+
+* **Simple List / Tuple (Major limitation)**
+
+  * If we store only prices, we immediately lose the connection between the product and its price
+  * E.g.,
+    * ```
+      prices_list = [25, 60, 45, 120, 15]
+      prices_tuple = 25, 60, 45, 120, 15
+  * These structures store values only, they do not tell us which price belongs to which product
+  * Tuples are even less preferred here because prices tend to change over time, and tuples are immutable
+
+* **Nested List or Nested Tuples (Partial improvement, still indirect)**
+
+  * Using a nested structure, we can now store product name and price together
+
+  * E.g. of a Nested List storing the information
+    * ```
+      price_nlist = [["Milk", 25], 
+                      ["Bread", 60], 
+                      ["Eggs", 45], 
+                      ["Cooking Oil", 120], 
+                      ["Banana", 15]]
+    
+  * This is definitely better because the association between Product name and Product Price is preserved
+
+  * However, to do something as simple as **Accessing a product’s price** requires a loop
+
+    * ```
+      for info in price_nlist:
+          if item in info:
+              print(info[-1])
+      ```
+
+  * Similarly, **Finding the maximum price** also needs a For loop
+    * ``` 
+      max([info[-1] for info in price_nlist])
+
+  * ❗The overall idea is that while lists and tuples *can* store product–price information using nested structures, accessing specific data or performing operations like finding the maximum price becomes indirect and loop-based
+
+  * **In summary, information retrieval in Lists and Tuples is not direct when association matters and simple tasks require us to iteratively search through the nested structure**
+
+
+#### Dictionaries as a Data Structure
+
+* Dictionary in Python is another built-in Data Structure, that is ideal for storing information where "association" matters
+  * ```
+      `prices_dict = {"Milk": 25, 
+                      "Bread": 60, 
+                      "Eggs": 45, 
+                      "Cooking Oil": 120, 
+                      "Banana": 15}`
+
+* Here the dictionary has Five items stored as the Five **key : value** pairs
+      
+  * For each of the Five items (separated by comma), the Product name is stored as the `key` and the Product price is stored at the `value`
+
+* With this structure, accessing a particular product's price becomes a simple Indexing task
+
+  * `prices_dict["Banana"]`
+  * This returns 15
+
+* Even aggregate operations become cleaner
+
+  * `max(prices_dict.values())` returns 120
+  * `min(prices_dict.values())` returns 15
+
+#### Creating Dictionaries from scratch
+
+- **Storing RGB values for colors** : Information that does not change over time
+  ```
+  Red   → 255, 0, 0
+  Blue  → 0, 0, 255
+  Green → 0, 128, 0
+  ```
+
+  ```
+  {'Red': (255,0,0), 
+  'Blue': (0,0,255), 
+  'Green': (0,128,0)}
+  ```
+- **Storing Movie information** : Information can change since ratings can upgrade or downgrade
+  ```
+  'The Dark Knight', 2008, 9, 1791916, 'Christopher Nolan'
+  'Inception', 2010, 8.8, 1583625, 'Christopher Nolan',
+  'Dangal', 2016, 8.8, 48969, 'Nitesh Tiwari',
+  'Interstellar', 2014, 8.6, 1047747, 'Christopher Nolan'
+  ```
+
+  ```
+  {'The Dark Knight': [2008, 9, 1791916, 'Christopher Nolan'],
+         'Inception': [2010, 8.8, 1583625, 'Christopher Nolan'],
+            'Dangal': [2016, 8.8, 48969, 'Nitesh Tiwari'],
+      'Interstellar': [2014, 8.6, 1047747, 'Christopher Nolan']}
+  ```
+
+#### Key based indexing in Dictionaries
+
+* **Dictionaries do not have integer-based indexing like Lists or Tuples**
+  - In lists we access elements using positions such as `prices_list[0]`, but Integer Indexes do not apply for dictionaries (its items are not ordered)
+  - Dictionaries are organized by association. Therefore, something like `prices_dict[0]` does not work unless `0` itself is a key in the dictionary.
+
+* **Dictionaries still support indexing, but it is key-based indexing**
+  - When we write `prices_dict["Milk"]`, Python returns the value associated with the key `"Milk"`. 
+  - In other words, key-based indexing in Dictionaries retrieves the mapped value corresponding to a specific key.
+
+* **Key-based indexing to add new items to a dictionary**
+  - `prices_dict["Apple"] = 250` will add a new item to the dictionary
+  - Here the key "Apple" does not already exist in dictionary, thus assignment creates a new key–value pair
+  - So in dictionaries, indexing combined with assignment becomes a way of expanding the data structure.
+
+* **Key-based indexing to update exisitng items in a dictionary**
+  - `prices_dict["Apple"] = 300` will update the price for Apples in Dictionary
+  - If the key "Apple" already exists in Dictionary, then assigning a new value will update it
+  - The key remains the same, only the associated value changes.
+
+#### Keys in Dictionaries are unique
+
+* **Dictionaries do not allow multiple keys with the same name because a key is like a unique label for a value**. Think of the key as a student’s roll number : two students cannot share the same roll number because then we would not know which student we are referring to.
+
+* For example, if we try to create a dictionary like:
+  `{"Apple": 250, "Apple": 300}`
+  Python will not store two separate entries. It will simply keep the latest value, resulting in:
+  `{"Apple": 300}`
+
+* This happens because in a dictionary, each key can point to only one value at a time. When we write `prices_dict["Apple"]`, Python must return exactly one value. **If duplicate keys were allowed, Python would not know which one to return**
+
+* So the rule is simple: **One key → One value.** That is why dictionary keys must always be unique.
+
+---

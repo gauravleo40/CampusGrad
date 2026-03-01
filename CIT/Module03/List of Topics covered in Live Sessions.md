@@ -493,3 +493,67 @@ When we are dealing with real-world data like **product names and their prices**
 * So the rule is simple: **One key → One value.** That is why dictionary keys must always be unique.
 
 ---
+
+## Session 11
+
+#### Dictionary creation
+- Creating an empty dictionary
+  - `scores = {}`
+- Iteratively adding items to the dictionary
+    ```
+    names = ['Ken','Roger','Joan','Stan']
+    marks = [87, 73, 91, 80]
+    for idx,name in enumerate(names):
+        scores[name] = marks[idx]
+    ```
+- Using `zip()` and `dict()` functions to create a Dictionary
+    ```
+    #-----Example 01 : Single attribute (marks)--------
+    names = ['Ken','Roger','Joan','Stan']
+    marks = [87, 73, 91, 80]
+    scores = dict(zip(names,marks))
+    ```
+
+    ```
+    #-----Example 02 : Multiple attributes (age and marks)--------
+    names = ['Ken','Roger','Joan','Stan']
+    marks = [82, 49, 88, 85]
+    age = 34,23,26,17
+    scores = dict(zip(names,zip(age,marks)))
+    print(scores)
+
+    #---output----
+    {'Ken': (34, 82), 'Roger': (23, 49), 'Joan': (26, 88), 'Stan': (17, 85)}
+    ```
+
+#### Operations on a Dictionary
+
+```
+d = {'The Dark Knight': [2008,9,1791916,'Christopher Nolan',533.32],
+                'Inception': [2010,8.8,1583625,'Christopher Nolan',292.57],
+                'Dangal': [2016,8.8,48969,'Nitesh Tiwari',11.15],
+                'Interstellar': [2014,8.6,1047747,'Christopher Nolan',187.99]}
+```
+
+
+- Adding a new item with key based **Indexing + Assignment**
+  - `d["The Departed"] = [2006, 8.5, 937414, 'Martin Scorsese', 132.37]`
+- Deleting an existing item with `pop()` method
+  - `d.pop('Interstellar')`
+- Adding items in dictionary `d` from another dictionary `more_movies`
+  - `d.update(more_movies)`
+- Checking if an item exists in a dictionary - **Membership operation on a Dictionary**
+  - `kantara in d` returns a `False`
+  - `Dangal in d` returns a `True`
+
+
+#### Running For loop on a Dictionary - to access its different components
+- Accessing `keys` of a Dictionary
+  - `for i in d :`
+  - `for i in d.keys() :`
+- Accessing `values` of a Dictionary
+  - `for i in d.values() :`
+- Accessing `items` of a Dictionary
+  - `for i in d.items() :`
+
+---
